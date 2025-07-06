@@ -188,6 +188,4 @@ This project is open source and available under the [MIT License](LICENSE).
 - [CSS Gradient](https://cssgradient.io/) for gradient inspiration
 - Modern web development best practices and accessibility guidelines
 
----
 
-**Note**: Replace `yourUsername` and `yourRepositoryName` with your actual GitHub username and repository name in the URLs above.
