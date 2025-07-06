@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Explorer - Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>API Data Explorer</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Users</a></li>
+                <li><a href="posts.html" class="active">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Posts Feed</h2>
+            <p>Browse through user posts and discussions</p>
+        </section>
+
+        <section class="filters">
+            <div class="filter-container">
+                <label for="user-filter">Filter by User:</label>
+                <select id="user-filter" onchange="filterPosts()">
+                    <option value="">All Users</option>
+                </select>
+                <button onclick="loadPosts()" class="refresh-btn">Refresh Posts</button>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading posts...</p>
+            </div>
+            
+            <div class="error-message" id="error-message" style="display: none;">
+                <p>Failed to load posts. Please try again later.</p>
+                <button onclick="loadPosts()" class="retry-btn">Retry</button>
+            </div>
+
+            <div class="posts-container" id="posts-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 API Data Explorer. Data from JSONPlaceholder API.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load posts and users for filter when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPosts();
+            loadUsersForFilter();
+        });
+    </script>
+</body>
+</html>

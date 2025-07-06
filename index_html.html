@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Explorer - Users</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>API Data Explorer</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Users</a></li>
+                <li><a href="posts.html">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Users Directory</h2>
+            <p>Explore user profiles and their information</p>
+        </section>
+
+        <section class="content">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading users...</p>
+            </div>
+            
+            <div class="error-message" id="error-message" style="display: none;">
+                <p>Failed to load users. Please try again later.</p>
+                <button onclick="loadUsers()" class="retry-btn">Retry</button>
+            </div>
+
+            <div class="users-grid" id="users-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 API Data Explorer. Data from JSONPlaceholder API.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load users when page loads
+        document.addEventListener('DOMContentLoaded', loadUsers);
+    </script>
+</body>
+</html>
