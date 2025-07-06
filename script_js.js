@@ -97,7 +97,6 @@ function createUserCard(user) {
 }
 
 function viewUserPosts(userId) {
-    // Store the selected user ID in sessionStorage for filtering
     sessionStorage.setItem('selectedUserId', userId);
     window.location.href = 'posts.html';
 }
@@ -190,10 +189,8 @@ function filterPosts() {
     const selectedUserId = filterSelect.value;
     
     if (selectedUserId === '') {
-        // Show all posts
         displayPosts(postsData);
     } else {
-        // Filter posts by selected user
         const filteredPosts = postsData.filter(post => post.userId == selectedUserId);
         displayPosts(filteredPosts);
     }
@@ -213,7 +210,6 @@ window.addEventListener('error', function(event) {
     showError('An unexpected error occurred. Please refresh the page.');
 });
 
-// Handle network errors
 window.addEventListener('unhandledrejection', function(event) {
     console.error('Unhandled promise rejection:', event.reason);
     showError('Network error. Please check your connection and try again.');
@@ -221,7 +217,6 @@ window.addEventListener('unhandledrejection', function(event) {
 
 // Initialize page based on current location
 document.addEventListener('DOMContentLoaded', function() {
-    // Add active class to current page nav link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
     
@@ -234,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Export functions for global access (if needed)
+// Export functions for global access
 window.loadUsers = loadUsers;
 window.loadPosts = loadPosts;
 window.loadUsersForFilter = loadUsersForFilter;
